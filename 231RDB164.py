@@ -1,10 +1,8 @@
-import selenium
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-import time
-from openpyxl import Workbook, load_workbook 
+from openpyxl import load_workbook 
 
 service = Service()
 option = webdriver.ChromeOptions()
@@ -47,8 +45,5 @@ for i in range(0, len(codedName)):
            totalSalary=totalSalary+int(ws['B'+str(j)].value)
     name[i]=name[i]+" "+ str(totalSalary)
 
-input=input("input name and surname of worker to know the salary: ")    
 for i in range(0, len(name)):
-    if input in name[i]:
-        print(name[i])
-
+    print(name[i])
